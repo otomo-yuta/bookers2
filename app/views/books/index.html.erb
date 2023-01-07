@@ -1,0 +1,56 @@
+<%= render 'templates/flash' %>
+
+<div class="container px-0 mt-3">
+  <% if @user %>
+    <% if @book.errors.any? %>
+      <div>
+        <h3>
+          <%= @book.errors.count %>error prohibited this obj from being saved:
+        </h3>
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+  
+  <div class="row">
+    <%= render partial: 'templates/template', locals: {book: @book, user: current_user } %>
+    
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @books.each do |book| %>
+            <tr>
+              <td>
+                <%= link_to user_path(book.user) do %>
+                  <%= image_tag book.user.get_profile_image(80, 80) %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to book_path(book) do %>
+                  <%= book.title %>
+                <% end %>
+              </td>
+              <td>
+                <%= book.body %>
+              </td>              
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

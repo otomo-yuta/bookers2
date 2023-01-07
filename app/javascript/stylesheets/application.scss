@@ -1,0 +1,12 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+.navbar-dark .navbar-nav {
+  .nav-link:hover {
+    color:#a39b9b !important;
+  }
+}
+
+.btn {
+  font-size: 14px;
+}

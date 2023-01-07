@@ -1,0 +1,23 @@
+<%= render 'templates/flash' %>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-sm-8 col-xl-6 mx-auto" style="line-height: 2.5em">
+      <h1 class="mb-0">
+        welcome to <span><i class="fas fa-book"></i></span><strong>Bookers</strong> !!
+      </h1>
+      <p class="mb-1">
+        In <i class="fas fa-book"></i><strong>Bookers</strong>,<br>
+        you can share and exchange your opinions, inpressions, and emotions<br>
+        about various books!
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 col-xl-6 mx-auto text-center"">
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-info col-10 mb-3 py-1" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success col-10 py-1" %>
+    </div>
+  </div>
+</div>
