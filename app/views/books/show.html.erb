@@ -36,18 +36,18 @@
                   <i class="far fa-heart"></i><%= @book.favorites.count %>
                 <% end %>
               </td>
-              <% end %>
+            <% end %>
             </td>
             <td>
                 コメント数:<%= @book.book_comments.count %>
-              </td
+            </td>
             <% if @user == current_user %>
               <td>
                 <%= link_to "Edit", edit_book_path(@book), class: "btn btn-success px-2 py-1" %>
               </td>
               <td>
                 <%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"}, class: "btn btn-danger px-2 py-1" %>
-              </td>>
+              </td>
             <% end %>
           </tr>
         </tbody>
